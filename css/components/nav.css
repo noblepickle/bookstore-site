@@ -1,5 +1,12 @@
 nav {
+    position: fixed;
+    min-width: 100vw;
+    padding: 0.2rem 1rem;
+    top: 0;
+    background-color: var(--nav-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
+
 }
 
 nav button {
