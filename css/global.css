@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Root variables (everywhere) */
+:root {
+    font-size: 16px;
+
+    --color-primary: #191921;
+}
+
+/* 3. Body defaults (every page) */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--color-primary);
+    background: #F9F3E0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 769px) {
+    body {
+        grid-template-columns: repeat(12, 1fr);  /* 12 columns! */
+        padding: 0;
+    }
+}
