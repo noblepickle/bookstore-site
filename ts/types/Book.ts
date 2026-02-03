@@ -8,4 +8,5 @@ export interface Book {
     image: string;
     description: string;
     isbn: string;
+    wishlist: boolean;
 }

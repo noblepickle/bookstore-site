@@ -18,6 +18,7 @@ nav button {
     margin-left: 1rem;
 }
 .nav__profile {display:none;}
+.nav__search {display: none;}
 
 .nav__logo {
     margin-right: auto;

@@ -6,6 +6,8 @@
     "moduleResolution": "node",
     "strict": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
     "allowSyntheticDefaultImports": true
   },
   "include": ["ts/**/*"]
