@@ -15,21 +15,21 @@ export class BookInstance implements Book {
     private _inCart: boolean;
 
     constructor(
-        public id: string,
-        public title: string,
-        public author: string,
-        public genre: string[],
-        public price: number,
-        public stock: number,
-        public image: string,
-        public description: string,
-        public isbn: string,
-        inCart: boolean = false
+        public readonly id: string,
+        public readonly title: string,
+        public readonly author: string,
+        public readonly genre: string[],
+        public readonly price: number,
+        public readonly stock: number,
+        public readonly image: string,
+        public readonly description: string,
+        public readonly isbn: string,
+        public inCart: boolean = false
     ) {
         this._inCart = inCart;
     }
 
-    get inCart(): boolean {
+    get inCartStatus(): boolean {
         return this._inCart;
     }
 
