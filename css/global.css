@@ -9,8 +9,10 @@
 
     --color-primary: #191921;
     --color-secondary: #fff;
+    --color-tertiary: #6B665D;
     --color-accent: #5B6D2E;
     --nav-color: #F3EFE5;
+    --color-section: #F6EDD0;
 }
 
 body {
