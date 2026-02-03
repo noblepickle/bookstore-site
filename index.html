@@ -13,10 +13,18 @@
 </head>
 <body>
     <nav class="nav">
-
+        <!--
+        <img src="images/icons/ParchmentAndInkwell_Logo.svg" alt="logo" class="nav__logo">
+        <div class="nav__search"></div> -->
      </nav>
     <header class="hero">
-
+        <h1 class="hero-title">
+            <span class="text"></span>
+            <span class="cursor">|</span> <br>
+            <span class="herotext">stories <br/> you love</span>
+        </h1>
+        <img src="images/HeroImageMobile.png" class="hero__image-mobile" alt="hero image">
+        <img src="images/HeroImage.png" class="hero__image" alt="hero image">
      </header>
     <main class="store">
 
@@ -25,7 +33,10 @@
 
 
     <script src="gsap/gsap.min.js"></script>
+    <script src="gsap/EasePack.min.js"></script>
+    <script src="gsap/TextPlugin.min.js"></script>
     <script src="gsap/ScrollTrigger.min.js"></script>
     <script type="module" src="dist/main.js"></script>
+    <script src="dist/utils/typewriter.js"></script>
 </body>
 </html>

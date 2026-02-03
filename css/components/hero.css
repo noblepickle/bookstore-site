@@ -1,3 +1,43 @@
 .hero {
-    min-height: 100vh;
+    width: 90vw;
+    min-height: 51vh;
+    font-family: 'Literata-ExtraLight', serif;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    justify-self: center;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 16vw, 4rem);
+    letter-spacing: 0.5rem;
+    line-height: 1.14;
+    position: relative;
+    color: #FFFFFF;
+    padding: 1rem;
+}
+
+.cursor {
+    position: absolute;
+    font-weight: 200;
+    top: 10px;
+}
+
+.hero__image-mobile {
+    width: 90%;
+    position: absolute;
+    z-index: -50;
+    border-radius: 19px;
+}
+.hero__image {display: none}
+
+@media (min-width: 769px) {
+    .hero {
+        grid-template-columns: repeat(12, 1fr);
+    }
+    .hero-title {
+        grid-column: 2 / span 5;
+    }
 }
