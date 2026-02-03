@@ -1,0 +1,21 @@
+.store {
+    padding: 0 1rem 0 1rem;
+}
+
+.store-section {
+    background-color: var(--color-section);
+    color: var(--color-primary);
+}
+
+.store__section-title {
+    font-family: 'Literata-Medium', serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.08rem;
+}
+
+.store__section-sub {
+    width: 80%;
+    font-family: 'Literata-Light', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.04rem;
+}
