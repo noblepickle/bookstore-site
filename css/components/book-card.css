@@ -70,7 +70,7 @@
 }
 
 .book-card__more-button,
-.book-card__wishlist-button {
+.book-card__cart-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +86,7 @@
     border-radius: 8px;
 }
 
-.book-card__wishlist-button {
+.book-card__cart-button {
     width: 34px;
     background: none;
     border: none;
@@ -94,7 +94,7 @@
     border-radius: 100px;
 }
 
-.book-card__wishlist-button img {
+.book-card__cart-button img {
     width: 100%;
     height: 100%;
 }

@@ -1,12 +1,18 @@
-import { Book } from '../types/Book.ts';
+import { BookInstance } from '../types/Book.js';
 
-function renderCard(books: Book[]) {
-    const containers: any = document.getElementsByClassName('store__section-carousel');
+export function renderCard(books: BookInstance[]) {
+    const containers: any = document.getElementsByClassName('store__section-carousel') as HTMLCollectionOf<HTMLElement>;
     const container: any = containers[0];
+
+    if (!container) {
+        console.error('Carousel container not found');
+        return;
+    }
+
     container.innerHTML = '';
 
-    books.forEach((book: any) => {
-        const article = document.createElement('article');
+    books.forEach(book => {
+        const article = document.createElement('article') ;
         article.classList.add('book-card');
         article.innerHTML = `
             <div class="book-card__info">
@@ -18,7 +24,7 @@ function renderCard(books: Book[]) {
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__wishlist-button"><img src="images/icons/Heart.svg" alt=""></button>
+                <button class="book-card__cart-button"><img src="../images/icons/addCart.svg" alt=""></button>
             </div>`;
         container.appendChild(article);
     })
