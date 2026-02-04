@@ -20,7 +20,7 @@ export function renderCard(books) {
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__cart-button"><img src="../images/icons/${book.inCart ? 'removeCart' : 'addCart'}.svg" alt=""></button>
+                <button class="book-card__cart-button"><img src="images/icons/${book.inCart ? 'removeCart' : 'addCart'}.svg" alt=""></button>
             </div>`;
         container.appendChild(article);
     });
