@@ -1,4 +1,4 @@
-export function getCartItemIds(books) {
+export function cartItemIds(books) {
     const cartItemIds = [];
     books.forEach(book => {
         if (book.inCart && book != cartItemIds) {

@@ -1,4 +1,5 @@
 import { BookInstance } from '../types/Book.js';
+import { cartItemIds} from "../utils/cart.js";
 
 export function renderCard(books: BookInstance[]) {
     const containers: any = document.getElementsByClassName('store__section-carousel') as HTMLCollectionOf<HTMLElement>;
@@ -25,19 +26,40 @@ export function renderCard(books: BookInstance[]) {
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__cart-button"><img src="images/icons/${book.inCart ? 'removeCart' : 'addCart'}.svg" alt=""></button>
+                <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" alt=""></button>
             </div>`;
+
+        article.addEventListener('click', (e: MouseEvent): void => {
+            const cartButton = (e.target as HTMLElement).closest('.book-card__cart-button');
+            if (cartButton) {
+                book.toggleCart();
+                const img = cartButton.querySelector('img') as HTMLImageElement;
+                if (img) {
+                    img.src = `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`;
+                }
+                console.log('clicked cart button:', book.id, ' Status: ', book.inCartStatus);
+                return;
+            }
+
+            const moreButton = (e.target as HTMLElement).closest('.book-card__more-button');
+            if (moreButton) {
+                console.log('clicked more button: ', book.id);
+                return;
+            }
+
+            const infoSection = (e.target as HTMLElement).closest('.book-card__info');
+            if (infoSection) {
+                console.log('clicked info: ', book.id);
+                return;
+            }
+
+            console.error('Error: handler not found, id: ', book.id);
+        });
+
+
         container.appendChild(article);
     })
-    container.addEventListener('click', (e: any): void => {
-        if (e.target.classList.contains('book-card__cart-button')) {
-            return
-        } else if (e.target.classList.contains('book-card__more-button')) {
-            return
-        }
-    })
 }
-
 
 
 /*

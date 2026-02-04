@@ -24,7 +24,7 @@ export class BookInstance implements Book {
         public readonly image: string,
         public readonly description: string,
         public readonly isbn: string,
-        public inCart: boolean = false
+        public inCart: boolean
     ) {
         this._inCart = inCart;
     }
@@ -33,11 +33,7 @@ export class BookInstance implements Book {
         return this._inCart;
     }
 
-    addToCart() {
-        this._inCart = true;
-    }
-
-    removeFromCart() {
-        this._inCart = false;
+    toggleCart() {
+        this._inCart = !this._inCart;
     }
 }

@@ -1,13 +1,8 @@
 import { BookInstance } from '../types/Book.js';
 
-export function getCartItemIds(books: BookInstance[]): string[] {
-    const cartItemIds: any  = [];
+export function cartItemIds(books: BookInstance[]): string[] {
+    const cartItemIds: string[] = books.filter((book: BookInstance) => book.inCart);
 
-    books.forEach (book => {
-        if (book.inCart && book != cartItemIds) {
-            cartItemIds.push(book.id);
-        }
-    })
     return cartItemIds;
 }
 
