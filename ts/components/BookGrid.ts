@@ -14,6 +14,7 @@ export function renderCard(books: BookInstance[]) {
     books.forEach(book => {
         const article = document.createElement('article') ;
         article.classList.add('book-card');
+        // language=HTML
         article.innerHTML = `
             <div class="book-card__info">
                 <div class="book-card__info-detail">
@@ -24,11 +25,20 @@ export function renderCard(books: BookInstance[]) {
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__cart-button"><img src="../images/icons/addCart.svg" alt=""></button>
+                <button class="book-card__cart-button"><img src="../images/icons/${book.inCart ? 'removeCart' : 'addCart'}.svg" alt=""></button>
             </div>`;
         container.appendChild(article);
     })
+    container.addEventListener('click', (e: any): void => {
+        if (e.target.classList.contains('book-card__cart-button')) {
+            return
+        } else if (e.target.classList.contains('book-card__more-button')) {
+            return
+        }
+    })
 }
+
+
 
 /*
 HTML:

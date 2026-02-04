@@ -1,6 +1,7 @@
 import { BookInstance } from './types/Book.js';
 import { booksData } from './data/books.js';
 import { renderCard } from './components/BookGrid.js';
+import { getCartItemIds} from "./utils/cart.js";
 
 function init() {
     const bookInstances: BookInstance[] = booksData.map((book: any) =>
@@ -18,6 +19,8 @@ function init() {
         )
     );
     renderCard(bookInstances);
+
+    console.log(getCartItemIds(bookInstances));
 }
 
 document.addEventListener('DOMContentLoaded', init);
