@@ -1,15 +1,27 @@
 /* Carousel
    ========================*/
+.carousel-wrapper {
+    max-width: 100vw;
+    margin-left: -1rem;
+    padding: 1rem 0;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /*scroll-snap-type: x mandatory;*/
+}
+
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 .store__section-carousel {
     background: var(--color-section);
-    position: absolute;
-    left: 0;
-    max-width: 100vw;
-    padding: 1rem;
-    overflow-x: scroll;
+    padding: 0 0 0 1rem;
     display: flex;
     justify-content: space-evenly;
     gap: 1.5rem;
+    z-index: 5;
 }
 
 
@@ -25,6 +37,8 @@
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
+    z-index: 3;
+    /*scroll-snap-align: start;*/
 }
 
 .book-card__info {
@@ -98,3 +112,6 @@
     width: 100%;
     height: 100%;
 }
+
+/* genre card */
+

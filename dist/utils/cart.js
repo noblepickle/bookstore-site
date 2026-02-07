@@ -1,12 +1,9 @@
-export function cartItemIds(books) {
-    const cartItemIds = [];
-    books.forEach(book => {
-        if (book.inCart && book != cartItemIds) {
-            cartItemIds.push(book.id);
-        }
-    });
+/*
+export function cartItemIds(books: BookInstance[]): string[] {
+    const cartItemIds: string[] = books.filter((book: BookInstance) => book.inCart);
+
     return cartItemIds;
-}
+}*/
 export function getCartTotal(books) {
     return books
         .filter(book => book.inCart)

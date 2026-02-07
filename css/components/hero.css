@@ -9,7 +9,6 @@
     justify-self: center;
     align-items: center;
     margin-top: clamp(4rem, 60vw, 8.5rem);
-    margin-bottom: clamp(4rem, 10vw, 7rem)
 }
 
 .hero-title {

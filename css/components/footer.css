@@ -1,0 +1,15 @@
+footer {
+    position: relative;
+    bottom: 0;
+    height: 3.2rem;
+    width: 100vw;
+    margin: 1rem 0 0 0;
+    background-color: var(--footer-bg);
+    color: var(--color-secondary);
+    font-family: 'Inter-Medium', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

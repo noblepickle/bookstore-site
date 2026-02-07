@@ -1,7 +1,9 @@
 .store__section {
     background-color: var(--color-section);
     color: var(--color-primary);
-    padding: 0 1rem 0 1rem;
+    padding: 0 0 0 1rem;
+    margin: 3rem 0 0 0;
+    width: 100vw;
 }
 
 .store__section-title {

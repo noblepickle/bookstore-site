@@ -1,5 +1,5 @@
 import { BookInstance } from '../types/Book.js';
-import { cartItemIds} from "../utils/cart.js";
+//import { cartItemIds} from "../utils/cart.js";
 
 export function renderCard(books: BookInstance[]) {
     const containers: any = document.getElementsByClassName('store__section-carousel') as HTMLCollectionOf<HTMLElement>;
@@ -60,23 +60,3 @@ export function renderCard(books: BookInstance[]) {
         container.appendChild(article);
     })
 }
-
-
-/*
-HTML:
-
-<article class="book-card">
-    <div class="book-card__info">
-        <div class="book-card__info-detail">
-            <h4 class="book-card__title">Roadside Picnic</h4>
-            <span class="book-card__author">Arkady & Boris Strugatsky</span>
-        </div>
-        <img class="book-card__image" src="images/covers/roadsidepicnic_cover.png" alt="book image">
-    </div>
-    <div class="book-card__actions">
-        <button class="book-card__more-button">Read more</button>
-        <button class="book-card__wishlist-button"><img src="images/icons/Heart.svg" alt=""></button>
-    </div>
-</article>
-
- */
