@@ -18,7 +18,8 @@ function init() {
             book.inCart ?? false
         )
     );
-    renderCard(bookInstances);
+    renderCard(bookInstances, '.current-highlights');
+    renderCard(bookInstances, '.beyond-zone');
 
     //console.log(cartItemIds(bookInstances));
 }

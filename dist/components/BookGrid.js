@@ -1,7 +1,11 @@
-//import { cartItemIds} from "../utils/cart.js";
-export function renderCard(books) {
-    const containers = document.getElementsByClassName('store__section-carousel');
-    const container = containers[0];
+//import { cartItemIds } from "../utils/cart.js";
+export function renderCard(books, section) {
+    const carouselContainer = document.querySelector(`${section}`);
+    if (!carouselContainer) {
+        console.error(`Element with selector "${section}" not found.`);
+        return;
+    }
+    const container = carouselContainer.querySelector('.store__section-carousel');
     if (!container) {
         console.error('Carousel container not found');
         return;

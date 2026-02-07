@@ -1,9 +1,15 @@
 import { BookInstance } from '../types/Book.js';
-//import { cartItemIds} from "../utils/cart.js";
+//import { cartItemIds } from "../utils/cart.js";
 
-export function renderCard(books: BookInstance[]) {
-    const containers: any = document.getElementsByClassName('store__section-carousel') as HTMLCollectionOf<HTMLElement>;
-    const container: any = containers[0];
+export function renderCard(books: BookInstance[], section: string) {
+    const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
+
+    if (!carouselContainer) {
+        console.error(`Element with selector "${section}" not found.`);
+        return;
+    }
+
+    const container = carouselContainer.querySelector('.store__section-carousel');
 
     if (!container) {
         console.error('Carousel container not found');
