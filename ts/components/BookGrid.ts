@@ -1,16 +1,14 @@
 import { BookInstance } from '../types/Book.js';
 //import { cartItemIds } from "../utils/cart.js";
 
-export function renderCard(books: BookInstance[], section: string) {
+export function renderBookCard(books: BookInstance[], section: string) {
     const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
-
     if (!carouselContainer) {
         console.error(`Element with selector "${section}" not found.`);
         return;
     }
 
     const container = carouselContainer.querySelector('.store__section-carousel');
-
     if (!container) {
         console.error('Carousel container not found');
         return;
@@ -30,7 +28,7 @@ export function renderCard(books: BookInstance[], section: string) {
                 </div>
                 <div class="book-card__image-container">
                     <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}">
-                <div/>
+                </div>
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
@@ -64,7 +62,26 @@ export function renderCard(books: BookInstance[], section: string) {
             console.error('Error: handler not found, id: ', book.id);
         });
 
-
         container.appendChild(article);
     })
 }
+
+// genre card component ==================
+
+/*
+export function renderGenreCard(section: string) {
+    const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
+    if (!carouselContainer) {
+        console.error(`Element with selector "${section}" not found.`);
+        return;
+    }
+
+    const container = carouselContainer.querySelector('.store__section-carousel');
+    if (!container) {
+        console.error('Carousel container not found');
+        return;
+    }
+
+    container.innerHTML = '';
+}
+*/

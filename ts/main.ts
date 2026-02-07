@@ -1,6 +1,6 @@
 import { BookInstance } from './types/Book.js';
 import { booksData } from './data/books.js';
-import { renderCard } from './components/BookGrid.js';
+import { renderBookCard } from './components/BookGrid.js';
 //import { cartItemIds} from "./utils/cart.js";
 
 function init() {
@@ -18,8 +18,8 @@ function init() {
             book.inCart ?? false
         )
     );
-    renderCard(bookInstances, '.current-highlights');
-    renderCard(bookInstances, '.beyond-zone');
+    renderBookCard(bookInstances, '.current-highlights');
+    renderBookCard(bookInstances, '.beyond-zone');
 
     //console.log(cartItemIds(bookInstances));
 }

@@ -71,9 +71,8 @@
 
 .book-card__image-container {
     width: 100%;
-    aspect-ratio: 215 / 330;
+    aspect-ratio: 215 / 360;
     overflow: hidden;
-    position: relative;
 }
 
 .book-card__image {
@@ -123,5 +122,6 @@
     height: 100%;
 }
 
-/* genre card */
+/* genre card
+   ==========================*/
 

@@ -1,5 +1,5 @@
 //import { cartItemIds } from "../utils/cart.js";
-export function renderCard(books, section) {
+export function renderBookCard(books, section) {
     const carouselContainer = document.querySelector(`${section}`);
     if (!carouselContainer) {
         console.error(`Element with selector "${section}" not found.`);
@@ -21,7 +21,9 @@ export function renderCard(books, section) {
                     <h4 class="book-card__title">${book.title}</h4>
                     <span class="book-card__author">${book.author}</span>
                 </div>
-                <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}">
+                <div class="book-card__image-container">
+                    <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}">
+                </div>
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
@@ -53,3 +55,21 @@ export function renderCard(books, section) {
         container.appendChild(article);
     });
 }
+// genre card component ==================
+/*
+export function renderGenreCard(section: string) {
+    const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
+    if (!carouselContainer) {
+        console.error(`Element with selector "${section}" not found.`);
+        return;
+    }
+
+    const container = carouselContainer.querySelector('.store__section-carousel');
+    if (!container) {
+        console.error('Carousel container not found');
+        return;
+    }
+
+    container.innerHTML = '';
+}
+*/ 
