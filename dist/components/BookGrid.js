@@ -21,7 +21,7 @@ export function renderCard(books, section) {
                     <h4 class="book-card__title">${book.title}</h4>
                     <span class="book-card__author">${book.author}</span>
                 </div>
-                <img class="book-card__image" src="images/covers/${book.image}" alt="book image">
+                <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}">
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>

@@ -30,8 +30,8 @@
 
 .book-card {
     overflow: hidden;
-    width: 215px;
-    height: 437px;
+    width: clamp(180px, 20vw, 220px);
+    aspect-ratio: 215 / 437;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,8 @@
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+    flex-grow: 1;
 }
 
 .book-card__info-detail {
@@ -67,10 +69,18 @@
     color: var(--color-tertiary);
 }
 
-.book-card__image {
-    position: relative;
-    bottom: -5px;
+.book-card__image-container {
     width: 100%;
+    aspect-ratio: 215 / 330;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Actions
@@ -79,7 +89,7 @@
 .book-card__actions {
     width: 100%;
     display: flex;
-    justify-content: space-between;;
+    justify-content: space-between;
     text-align: center;
 }
 
@@ -91,7 +101,7 @@
 }
 
 .book-card__more-button {
-    width: 175px;
+    width: clamp(8.9rem, 16vw, 10.9rem);
     font-family: 'Literata-Medium', serif;
     font-size: 1.1rem;
     color: var(--color-secondary);
