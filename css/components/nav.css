@@ -17,9 +17,25 @@ nav button {
     border-radius: 0;
     margin-left: 1rem;
 }
-.nav__profile {display:none;}
-.nav__search {display: none;}
 
-.nav__logo {
-    margin-right: auto;
+.nav__buttons {
+    margin-left: auto;
+    height: 100%;
+}
+
+.nav__logo {margin-right: 0;}
+.nav__search {display: none; margin-left: 1rem;}
+.nav__profile {display: none;}
+.nav__burger-menu {}
+
+@media (min-width: 769px) {
+    .nav__search {
+        display: inline-block;
+        margin-left: 1rem;
+    }
+    .nav__profile {display: inline-block;}
+
+    .nav__burger-menu {
+        display: none;
+    }
 }
