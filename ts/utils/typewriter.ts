@@ -1,4 +1,7 @@
 declare const gsap: any;
+declare const ScrollTrigger: any;
+
+gsap.registerPlugin(ScrollTrigger);
 
 const words : string[] = ["Read", "Reach", "Reveal"];
 
@@ -9,4 +12,24 @@ words.forEach(word => {
     tl.to('.text', {duration: 1, text: word});
     masterTL.add(tl);
 });
+
+const storeSections: any = gsap.utils.toArray('.store__section');
+
+storeSections.forEach((storeSection: any) => {
+
+    gsap.to(storeSection, {
+        scrollTrigger: {
+            trigger: storeSection,
+            start: "top+=20px bottom"
+            //markers: true
+        },
+        opacity: 1,
+        y: -100,
+        duration: 1,
+        easing: "easeInCubic",
+
+    });
+});
+
+
 
