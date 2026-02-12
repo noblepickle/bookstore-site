@@ -1,5 +1,7 @@
 "use strict";
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(EasePack);
+ScrollTrigger.config({ ignoreMobileResize: true });
 const words = ["Read", "Reach", "Reveal"];
 let masterTL = gsap.timeline({ repeat: -1 });
 words.forEach(word => {
@@ -7,18 +9,18 @@ words.forEach(word => {
     tl.to('.text', { duration: 1, text: word });
     masterTL.add(tl);
 });
-const storeSections = gsap.utils.toArray('.store__section');
+const storeSections = gsap.utils.toArray('.store__section').slice(1);
 storeSections.forEach((storeSection) => {
-    gsap.to(storeSection, {
+    gsap.fromTo(storeSection, { opacity: 0, y: 100 }, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
         scrollTrigger: {
             trigger: storeSection,
             start: "top+=20px bottom",
-            toggleActions: "restart none none none"
+            end: "bottom-=100px 80%",
+            toggleActions: "play none none none"
             //markers: true
-        },
-        opacity: 1,
-        y: -100,
-        duration: 1,
-        easing: "easeInCubic",
+        }
     });
 });

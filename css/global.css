@@ -17,12 +17,21 @@
     --footer-bg: #2B2B2B;
 }
 
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-kerning: normal;
+}
+
 body {
     color: var(--color-primary);
     background: #F9F3E0;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.8rem;
+    font-family: 'Literata-Light', serif;
+    height: 100%;
 }
 
 @media (min-width: 769px) {
