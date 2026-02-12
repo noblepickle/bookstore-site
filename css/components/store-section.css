@@ -1,3 +1,7 @@
+.store {
+    overflow: hidden;
+}
+
 .store__section {
     background-color: var(--color-section);
     color: var(--color-primary);

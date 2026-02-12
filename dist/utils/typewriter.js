@@ -12,7 +12,8 @@ storeSections.forEach((storeSection) => {
     gsap.to(storeSection, {
         scrollTrigger: {
             trigger: storeSection,
-            start: "top+=20px bottom"
+            start: "top+=20px bottom",
+            toggleActions: "restart none none none"
             //markers: true
         },
         opacity: 1,
