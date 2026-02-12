@@ -42,7 +42,7 @@
 }
 
 .book-card__info {
-    background-color: #fafafa;
+    background-color: var(--bg-card);
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
@@ -124,4 +124,29 @@
 
 /* genre card
    ==========================*/
+
+.genre-card__wrapper {
+    display: grid;
+    grid-auto-columns: minmax(100px, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.genre-card__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 245px;
+    height: 54px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--bg-card);
+    color: var(--color-primary);
+    font-size: 1.6rem;
+    font-family: 'Literata-Medium', serif;
+    letter-spacing: 0.1rem;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 

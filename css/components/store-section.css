@@ -1,9 +1,16 @@
+.store {
+    overflow: hidden;
+}
+
 .store__section {
     background-color: var(--color-section);
     color: var(--color-primary);
     padding: 0 0 0 1rem;
     margin: 3rem 0 0 0;
     width: 100vw;
+    position: relative;
+    opacity: 0;
+    bottom: -100px;
 }
 
 .store__section-title {
