@@ -3,6 +3,8 @@ import { booksData } from './data/books.js';
 import { renderBookCard } from './components/BookGrid.js';
 //import { cartItemIds} from "./utils/cart.js";
 
+export let genres: string[] = [];
+
 function init() {
     const bookInstances: BookInstance[] = booksData.map((book: any) =>
         new BookInstance(
@@ -18,6 +20,17 @@ function init() {
             book.inCart ?? false
         )
     );
+
+    booksData.forEach((book: any) => {
+        if (!genres.includes(book.genre)) {
+            genres.push(book.genre ?? undefined);
+        } else {
+            return
+        }
+    });
+
+    console.log('Genres:', genres.join(", "));
+
     renderBookCard(bookInstances, '.current-highlights');
     renderBookCard(bookInstances, '.beyond-zone');
 

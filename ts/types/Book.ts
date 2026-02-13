@@ -37,3 +37,4 @@ export class BookInstance implements Book {
         this._inCart = !this._inCart;
     }
 }
+

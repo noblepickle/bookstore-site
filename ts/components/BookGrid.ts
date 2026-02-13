@@ -68,7 +68,7 @@ export function renderBookCard(books: BookInstance[], section: string) {
 
 // genre card component ==================
 
-/*
+
 export function renderGenreCard(section: string) {
     const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
     if (!carouselContainer) {
@@ -82,6 +82,9 @@ export function renderGenreCard(section: string) {
         return;
     }
 
-    container.innerHTML = '';
+    container.innerHTML = '<div class="genre-card__wrapper"></div>';
+    const cardWrapper: HTMLElement | null = document.querySelector('.genre-card__wrapper');
+
+
+
 }
-*/

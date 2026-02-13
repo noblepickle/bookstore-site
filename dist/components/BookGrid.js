@@ -56,20 +56,17 @@ export function renderBookCard(books, section) {
     });
 }
 // genre card component ==================
-/*
-export function renderGenreCard(section: string) {
-    const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
+export function renderGenreCard(section) {
+    const carouselContainer = document.querySelector(`${section}`);
     if (!carouselContainer) {
         console.error(`Element with selector "${section}" not found.`);
         return;
     }
-
     const container = carouselContainer.querySelector('.store__section-carousel');
     if (!container) {
         console.error('Carousel container not found');
         return;
     }
-
-    container.innerHTML = '';
+    container.innerHTML = '<div class="genre-card__wrapper"></div>';
+    const cardWrapper = document.querySelector('.genre-card__wrapper');
 }
-*/ 
