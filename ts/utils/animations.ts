@@ -37,4 +37,3 @@ storeSections.forEach((storeSection: any) => {
     );
 });
 
-

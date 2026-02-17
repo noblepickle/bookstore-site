@@ -9,11 +9,7 @@
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
 }
-
-
-.carousel-wrapper::-webkit-scrollbar {
-    display: none;
-}
+.carousel-wrapper::-webkit-scrollbar {display: none;}
 
 .store__section-carousel {
     background: var(--color-section);

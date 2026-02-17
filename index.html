@@ -17,10 +17,12 @@
     <nav class="nav">
         <img src="images/icons/ParchmentAndInkwell_Logo.svg" alt="logo" class="nav__logo">
         <div class="nav__search">
-            <form class="nav__search-form" action="">
-                <label for="search" class="nav__search-form-label">
-                    <input class="nav__search-input" type="search" name="search" placeholder="Search">
-                </label>
+            <form class="nav__search-form" role="search">
+                <label for="search" class="visually-hidden">Search books</label>
+                <div class="nav__search-input-wrapper">
+                    <img src="images/icons/Search.svg" class="nav__search-icon" alt="" aria-hidden="true">
+                    <input class="nav__search-input" id="search" type="search" name="search" placeholder="Search" aria-label="Search books">
+                </div>
             </form>
          </div>
         <div class="nav__buttons">

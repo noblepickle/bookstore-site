@@ -42,4 +42,8 @@
     .hero-title {
         grid-column: 2 / span 5;
     }
+    .hero__image-mobile {display: none;}
+    .hero__image {
+        display: block;
+    }
 }
