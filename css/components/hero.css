@@ -43,8 +43,6 @@
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        margin: 0;
-        padding: 0;
         max-height: 90vh;
     }
     .hero-title {
@@ -61,9 +59,18 @@
         letter-spacing: 2px;
         color: var(--color-secondary);
         background-color: var(--color-accent);
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
         border: none;
         border-radius: 19px;
         cursor: pointer;
+    }
+    .hero-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+    .hero-cta:active {
+        transform: translateY(0px);
+        box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
     }
     .hero__image-mobile {display: none;}
     .hero__image {

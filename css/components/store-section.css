@@ -15,7 +15,6 @@
     font-family: 'Literata-Medium', serif;
     font-size: 1.8rem;
     letter-spacing: 0.08rem;
-
 }
 
 .store__section-sub {
@@ -23,4 +22,8 @@
     font-family: 'Literata-Light', serif;
     font-size: 1.1rem;
     letter-spacing: 0.04rem;
+}
+
+@media (min-width: 769px) {
+
 }

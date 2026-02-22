@@ -19,8 +19,8 @@ storeSections.forEach((storeSection) => {
             trigger: storeSection,
             start: "top+=20px bottom",
             end: "bottom-=100px 80%",
-            toggleActions: "play none none none"
-            //markers: true
+            toggleActions: "play none none none",
+            markers: true
         }
     });
 });
