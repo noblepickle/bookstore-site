@@ -22,12 +22,12 @@ export function renderBookCard(books, section) {
                     <span class="book-card__author">${book.author}</span>
                 </div>
                 <div class="book-card__image-container">
-                    <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}">
+                    <img class="book-card__image" src="images/covers/${book.image}" alt="${book.title || 'Book Cover'}" draggable="false">
                 </div>
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" alt=""></button>
+                <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" draggable="false" alt=""></button>
             </div>`;
         article.addEventListener('click', (e) => {
             const cartButton = e.target.closest('.book-card__cart-button');

@@ -116,6 +116,7 @@
 .book-card__cart-button img {
     width: 100%;
     height: 100%;
+    user-select: none;
 }
 
 /* genre card
@@ -143,7 +144,19 @@
     font-family: 'Literata-Medium', serif;
     /*text-decoration: underline;*/
     letter-spacing: 0.1rem;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-
+@media (min-width: 769px) {
+    .book-card__info,
+    .book-card__more-button,
+    .book-card__cart-button,
+    .genre-card__button {
+        position: relative;
+        cursor: pointer;
+    }
+    .book-card__more-button:hover {top: -1px;}
+    .book-card__more-button:active {top: 0;}
+    .genre-card__button:hover {top: -1px; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);}
+    .genre-card__button:active {top: 0; box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);}
+}
