@@ -128,8 +128,9 @@ nav button {
         display: inline-block;
         margin-left: 1rem;
     }
+    .nav button {cursor: pointer;}
     .nav__profile {display: inline-block;}
-
+    .cart-button__counter{cursor: default;}
     .nav__burger-menu {
         display: none;
     }

@@ -21,17 +21,18 @@
                 <label for="search" class="visually-hidden">Search books</label>
                 <div class="nav__search-input-wrapper">
                     <img src="images/icons/Search.svg" class="nav__search-icon" alt="" aria-hidden="true">
-                    <input class="nav__search-input" id="search" type="search" name="search" placeholder="Search" aria-label="Search books">
+                    <input class="nav__search-input" id="search" type="search" name="search" placeholder="Search" aria-label="Search books" list="book-titles" autocomplete="off">
                 </div>
             </form>
+            <datalist id="book-titles"></datalist>
          </div>
         <div class="nav__buttons">
             <div class="nav__cart-button-wrapper">
-                <button class="nav__cart-button"><img src="images/icons/ShoppingCart.svg" alt="cart"></button>
+                <button class="nav__cart-button"><img src="images/icons/ShoppingCart.svg" alt="cart" draggable="false"></button>
                 <div class="cart-button__counter"><span>2</span></div>
             </div>
-            <button class="nav__profile"><img src="images/icons/User.svg" alt="profile"></button>
-            <button class="nav__burger-menu"> <img src="images/icons/Menu.svg" alt="menu"></button>
+            <button class="nav__profile"><img src="images/icons/User.svg" alt="profile" draggable="false"></button>
+            <button class="nav__burger-menu"> <img src="images/icons/Menu.svg" alt="menu" draggable="false"></button>
         </div>
      </nav>
     <header class="hero">

@@ -14,6 +14,16 @@ function init() {
         }
     });
     console.log('Genres:', genres.join(", "));
+    function populateBookDatalist() {
+        const datalist = document.getElementById('book-titles');
+        datalist.innerHTML = '';
+        booksData.forEach((book) => {
+            const option = document.createElement('option');
+            option.value = book.title;
+            datalist.appendChild(option);
+        });
+    }
+    populateBookDatalist();
     renderBookCard(bookInstances, '.current-highlights');
     renderBookCard(bookInstances, '.beyond-zone');
     //console.log(cartItemIds(bookInstances));

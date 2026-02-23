@@ -22,14 +22,24 @@ function init() {
     );
 
     booksData.forEach((book: any) => {
-        if (!genres.includes(book.genre)) {
-            genres.push(book.genre ?? undefined);
-        } else {
-            return
-        }
+        (book.genre || []).forEach((genre: string) => {
+            if (!genres.includes(genre)) {
+                genres.push(genre);
+            }
+        });
     });
-
     console.log('Genres:', genres.join(", "));
+
+    function populateBookDatalist(): void {
+        const datalist = document.getElementById('book-titles') as HTMLDataListElement;
+        datalist.innerHTML = '';
+        booksData.forEach((book) => {
+            const option = document.createElement('option');
+            option.value = book.title;
+            datalist.appendChild(option);
+        });
+    }
+    populateBookDatalist();
 
     renderBookCard(bookInstances, '.current-highlights');
     renderBookCard(bookInstances, '.beyond-zone');
