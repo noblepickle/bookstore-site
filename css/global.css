@@ -37,6 +37,24 @@ body {
 @media (min-width: 769px) {
     body {
         grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto 1fr auto;
         padding: 0;
+        gap: 0;
     }
+
+    nav {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .hero {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    footer {
+        grid-column: 1 / -1;
+        grid-row: 4;
+    }
+
 }
