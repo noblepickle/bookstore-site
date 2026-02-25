@@ -41,10 +41,36 @@ function init() {
     }
     populateBookDatalist();
 
+
+
     renderBookCard(bookInstances, '.current-highlights');
     renderBookCard(bookInstances, '.beyond-zone');
 
     //console.log(cartItemIds(bookInstances));
+
+    setTimeout(() => {
+        document.querySelectorAll<HTMLElement>('.carousel-container').forEach(container => {
+            const carouselWrapper = container.querySelector('.carousel-wrapper') as HTMLElement;
+            const leftArrow = container.querySelector('.left-arrow') as HTMLButtonElement;
+            const rightArrow = container.querySelector('.right-arrow') as HTMLButtonElement;
+
+            if (!carouselWrapper || !leftArrow || !rightArrow) {
+                console.error('Carousel wrapper or arrows not found in container:', container);
+                return;
+            }
+
+            const cardWidth = 250;
+
+            leftArrow.addEventListener('click', () => {
+                carouselWrapper.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+            });
+
+            rightArrow.addEventListener('click', () => {
+                carouselWrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            });
+        });
+    }, 0);
+
 }
 
 document.addEventListener('DOMContentLoaded', init);

@@ -9,15 +9,13 @@
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
 }
-.carousel-wrapper::-webkit-scrollbar {display: none;}
+.carousel-wrapper::-webkit-scrollbar { display: none; }
 
 .store__section-carousel {
-    background: var(--color-section);
-    padding: 0 0 0 1rem;
     display: flex;
-    justify-content: space-evenly;
     gap: 1.5rem;
-    z-index: 5;
+    padding: 0 1rem;
+    width: max-content;
 }
 
 
