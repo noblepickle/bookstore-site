@@ -1,6 +1,7 @@
 import { BookInstance } from './types/Book.js';
 import { booksData } from './data/books.js';
 import { renderBookCard } from './components/BookGrid.js';
+import { updateCartCounter } from './utils/cart.js';
 //import { cartItemIds} from "./utils/cart.js";
 export let genres = [];
 function init() {
@@ -23,6 +24,7 @@ function init() {
         });
     }
     populateBookDatalist();
+    updateCartCounter();
     renderBookCard(bookInstances, '.current-highlights');
     renderBookCard(bookInstances, '.beyond-zone');
     //console.log(cartItemIds(bookInstances));

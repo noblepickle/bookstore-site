@@ -1,5 +1,6 @@
 import { BookInstance } from '../types/Book.js';
-//import { cartItemIds } from "../utils/cart.js";
+import { toggleCartStatus } from '../utils/cart.js';
+
 
 export function renderBookCard(books: BookInstance[], section: string) {
     const carouselContainer: HTMLElement | null = document.querySelector(`${section}`);
@@ -36,15 +37,16 @@ export function renderBookCard(books: BookInstance[], section: string) {
             </div>`;
 
         article.addEventListener('click', (e: MouseEvent): void => {
-            const cartButton = (e.target as HTMLElement).closest('.book-card__cart-button');
+            const cartButton = article.querySelector('.book-card__cart-button');
             if (cartButton) {
-                book.toggleCart();
-                const img = cartButton.querySelector('img') as HTMLImageElement;
-                if (img) {
-                    img.src = `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`;
-                }
-                console.log('clicked cart button:', book.id, ' Status: ', book.inCartStatus);
-                return;
+                cartButton.addEventListener('click', (e: Event) => {
+                    e.stopPropagation();
+                    toggleCartStatus(book);
+                    const img = cartButton.querySelector('img');
+                    if (img) {
+                        img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
+                    }
+                });
             }
 
             const moreButton = (e.target as HTMLElement).closest('.book-card__more-button');

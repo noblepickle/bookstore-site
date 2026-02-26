@@ -1,4 +1,4 @@
-//import { cartItemIds } from "../utils/cart.js";
+import { toggleCartStatus } from '../utils/cart.js';
 export function renderBookCard(books, section) {
     const carouselContainer = document.querySelector(`${section}`);
     if (!carouselContainer) {
@@ -30,15 +30,16 @@ export function renderBookCard(books, section) {
                 <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" draggable="false" alt=""></button>
             </div>`;
         article.addEventListener('click', (e) => {
-            const cartButton = e.target.closest('.book-card__cart-button');
+            const cartButton = article.querySelector('.book-card__cart-button');
             if (cartButton) {
-                book.toggleCart();
-                const img = cartButton.querySelector('img');
-                if (img) {
-                    img.src = `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`;
-                }
-                console.log('clicked cart button:', book.id, ' Status: ', book.inCartStatus);
-                return;
+                cartButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleCartStatus(book);
+                    const img = cartButton.querySelector('img');
+                    if (img) {
+                        img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
+                    }
+                });
             }
             const moreButton = e.target.closest('.book-card__more-button');
             if (moreButton) {

@@ -29,7 +29,7 @@
         <div class="nav__buttons">
             <div class="nav__cart-button-wrapper">
                 <button class="nav__cart-button"><img src="images/icons/ShoppingCart.svg" alt="cart" draggable="false"></button>
-                <div class="cart-button__counter"><span>2</span></div>
+                <div class="cart-button__counter"><span>0</span></div>
             </div>
             <button class="nav__profile"><img src="images/icons/User.svg" alt="profile" draggable="false"></button>
             <button class="nav__burger-menu"> <img src="images/icons/Menu.svg" alt="menu" draggable="false"></button>
@@ -93,12 +93,18 @@
         </section>
 
         <section class="store__section beyond-zone">
-            <div class="store__section-wrapper">
-                <h2 class="store__section-title">Beyond the Zone</h2>
-                <h3 class="store__section-sub">Curated for your interest in the Strugatsky brothers.</h3>
-                <div class="carousel-wrapper">
-                    <div class="store__section-carousel"></div>
+            <div class="carousel-container">
+                <button class="carousel-arrow left-arrow">←</button>
+                <div class="store__section-wrapper">
+                    <h2 class="store__section-title">Beyond the Zone</h2>
+                    <h3 class="store__section-sub">Curated for your interest in the Strugatsky brothers.</h3>
+                    <div class="carousel-wrapper">
+                        <div class="store__section-carousel">
+                            <!-- Book cards will be rendered here by renderBookCard() -->
+                        </div>
+                    </div>
                 </div>
+                <button class="carousel-arrow right-arrow">→</button>
             </div>
         </section>
      </main>
