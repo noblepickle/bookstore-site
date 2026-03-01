@@ -3,11 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel=stylesheet href="css/fonts.css">
     <link rel=stylesheet href="css/global.css">
+    <link rel="stylesheet" href="css/components/nav.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel=stylesheet href="css/product.css">
 </head>
 <body>
-    <h1 class="product__title"></h1>
+<nav class="nav">
+    <img src="images/icons/ParchmentAndInkwell_Logo.svg" alt="logo" class="nav__logo">
+    <div class="nav__search">
+        <form class="nav__search-form" role="search">
+            <label for="search" class="visually-hidden">Search books</label>
+            <div class="nav__search-input-wrapper">
+                <img src="images/icons/Search.svg" class="nav__search-icon" alt="" aria-hidden="true">
+                <input class="nav__search-input" id="search" type="search" name="search" placeholder="Search" aria-label="Search books" list="book-titles" autocomplete="off">
+            </div>
+        </form>
+        <datalist id="book-titles"></datalist>
+    </div>
+    <div class="nav__buttons">
+        <div class="nav__cart-button-wrapper">
+            <button class="nav__cart-button"><img src="images/icons/ShoppingCart.svg" alt="cart" draggable="false"></button>
+            <div class="cart-button__counter"><span>0</span></div>
+        </div>
+        <button class="nav__profile"><img src="images/icons/User.svg" alt="profile" draggable="false"></button>
+        <button class="nav__burger-menu"> <img src="images/icons/Menu.svg" alt="menu" draggable="false"></button>
+    </div>
+</nav>
+
+<main>
+    <h1 class="product__title"></h1><br>
     <h2 class="product__author"></h2>
     <img class="product__cover"> <!-- for the cover just the alt book_cover.png hast to change -->
     <div class="product__info">
@@ -31,6 +58,8 @@
             <button class="info__add">Add to cart</button>
         </div>
     </div>
+</main>
+<footer><p>Portfolio project</p></footer>
 
   <script type="module" src="dist/product.js"></script>
 </body>

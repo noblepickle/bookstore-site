@@ -1,0 +1,22 @@
+body {
+    padding-top: 4rem;
+}
+
+main {
+    padding: 0.5rem;
+
+}
+
+.product__cover {
+    grid-column: 1;
+}
+
+
+/* Media query's
+   ==========================*/
+
+@media (min-width: 769px) {
+    body {
+        padding-top: 6rem;
+    }
+}
