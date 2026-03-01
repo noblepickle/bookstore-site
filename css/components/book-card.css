@@ -115,6 +115,7 @@
     width: 100%;
     height: 100%;
     user-select: none;
+    pointer-events: none;
 }
 
 /* genre card
@@ -145,7 +146,15 @@
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* Media query's
+   ============================ */
+
 @media (min-width: 769px) {
+    .book-card {
+        scroll-snap-align: start;
+    }
+    .store__section-carousel { gap: 1.8rem; }
+
     .book-card__info,
     .book-card__more-button,
     .book-card__cart-button,
@@ -153,8 +162,10 @@
         position: relative;
         cursor: pointer;
     }
-    .book-card__more-button:hover {top: -1px;}
-    .book-card__more-button:active {top: 0;}
-    .genre-card__button:hover {top: -1px; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);}
-    .genre-card__button:active {top: 0; box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);}
+    .book-card__more-button:hover { top: -1px; }
+    .book-card__more-button:active { top: 0; }
+    .genre-card__button:hover { top: -1px; box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2); }
+    .genre-card__button:active { top: 0; box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2); }
+
+    .genre-card__wrapper { position: relative; left: -15px; gap: 2rem;}
 }

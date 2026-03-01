@@ -37,35 +37,35 @@ export function renderBookCard(books: BookInstance[], section: string) {
             </div>`;
 
         article.addEventListener('click', (e: MouseEvent): void => {
-            const cartButton = article.querySelector('.book-card__cart-button');
-            if (cartButton) {
-                cartButton.addEventListener('click', (e: Event) => {
-                    e.stopPropagation();
-                    toggleCartStatus(book);
-                    const img = cartButton.querySelector('img');
-                    if (img) {
-                        img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
-                    }
-                });
-            }
-
             const moreButton = (e.target as HTMLElement).closest('.book-card__more-button');
             if (moreButton) {
                 console.log('clicked more button: ', book.id);
+                window.location.href = `product.html?id=${book.id}`;
                 return;
             }
 
             const infoSection = (e.target as HTMLElement).closest('.book-card__info');
             if (infoSection) {
                 console.log('clicked info: ', book.id);
+                window.location.href = `product.html?id=${book.id}`;
                 return;
             }
-
-            console.error('Error: handler not found, id: ', book.id);
         });
 
+        const cartButton = article.querySelector('.book-card__cart-button');
+        if (cartButton) {
+            cartButton.addEventListener('click', (e: Event) => {
+                e.stopPropagation();
+                toggleCartStatus(book);
+                const img = cartButton.querySelector('img');
+                if (img) {
+                    img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
+                }
+            });
+        }
+
         container.appendChild(article);
-    })
+    });
 }
 
 // genre card component ==================

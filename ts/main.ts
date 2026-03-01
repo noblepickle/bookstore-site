@@ -18,7 +18,9 @@ function init() {
             book.image ?? "default-cover.png",
             book.description ?? "",
             book.isbn ?? "",
-            book.inCart ?? false
+            book.inCart ?? false,
+            book.pages ?? 0,
+            book.coverType ?? "Unknown"
         )
     );
 
@@ -56,7 +58,6 @@ function init() {
             const rightArrow = container.querySelector('.right-arrow') as HTMLButtonElement;
 
             if (!carouselWrapper || !leftArrow || !rightArrow) {
-                console.error('Carousel wrapper or arrows not found in container:', container);
                 return;
             }
 

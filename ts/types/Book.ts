@@ -9,6 +9,8 @@ export interface Book {
     description: string;
     isbn: string;
     inCart: boolean;
+    pages: number;
+    coverType: string;
 }
 
 export class BookInstance implements Book {
@@ -24,7 +26,9 @@ export class BookInstance implements Book {
         public readonly image: string,
         public readonly description: string,
         public readonly isbn: string,
-        public inCart: boolean
+        public inCart: boolean,
+        public readonly pages: number,
+        public readonly coverType: string
     ) {
         this._inCart = inCart;
     }

@@ -31,6 +31,20 @@
         grid-column: 1 / -1;
         grid-row: 3;
     }
+
+    .store__section-title,
+    .store__section-sub {
+        position: relative;
+        left: -14px;
+    }
+
+    .store__section-title {
+        font-size: 2.1rem;
+    }
+    .store__section-sub {
+        font-size: 1.3rem;
+    }
+
     .carousel-container {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -50,10 +64,8 @@
     .carousel-arrow {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
+        background: none;
+        border: solid 3px var(--color-primary);
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -67,9 +79,11 @@
 
     .left-arrow {
         left: 10px;
+        transform: translateX(150%);
     }
 
     .right-arrow {
         right: 10px;
+        transform: translateX(-150%);
     }
 }

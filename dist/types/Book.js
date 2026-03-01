@@ -9,8 +9,10 @@ export class BookInstance {
     description;
     isbn;
     inCart;
+    pages;
+    coverType;
     _inCart;
-    constructor(id, title, author, genre, price, stock, image, description, isbn, inCart) {
+    constructor(id, title, author, genre, price, stock, image, description, isbn, inCart, pages, coverType) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -21,6 +23,8 @@ export class BookInstance {
         this.description = description;
         this.isbn = isbn;
         this.inCart = inCart;
+        this.pages = pages;
+        this.coverType = coverType;
         this._inCart = inCart;
     }
     get inCartStatus() {

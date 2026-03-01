@@ -9,7 +9,9 @@ export let booksData = [
         "image": "roadsidepicnic_cover.png",
         "description": "A masterpiece of Soviet science fiction that explores the human cost of cosmic indifference. Follow Redrick Schuhart into the dangerous 'Zone,' a wasteland filled with wonders and terrors left behind by extraterrestrial visitors.",
         "isbn": "ISBN-978-1-234-5678-9",
-        "inCart": false
+        "inCart": false,
+        "pages": 224,
+        "coverType": "Hardcover"
     },
     {
         "id": "2",
@@ -17,11 +19,13 @@ export let booksData = [
         "author": "Franz Kafka",
         "genre": ["existentialism", "absurdist fiction"],
         "price": 11.50,
-        "stock": 12,
+        "stock": 5,
         "image": "dasschloss_cover.png",
         "description": "Franz Kafka's haunting novel about surveyor K., who arrives in a remote village dominated by an impenetrable castle and its enigmatic bureaucracy. His futile struggle for access symbolizes the absurdity and alienation of modern existence.",
         "isbn": "ISBN-978-1-234-5678-0",
-        "inCart": false
+        "inCart": false,
+        "pages": 176,
+        "coverType": "Paperback"
     },
     {
         "id": "3",
@@ -29,11 +33,13 @@ export let booksData = [
         "author": "Alfred Kubin",
         "genre": ["expressionism", "horror", "fantasy"],
         "price": 14.20,
-        "stock": 8,
+        "stock": 1325,
         "image": "dieandereseite_cover.png",
         "description": "A visionary nightmare journey into Dreamland, a grotesque dream-realm ruled by the tyrannical Patera. Kubin's illustrated novel blends surreal horror with expressionist dread, exploring the fragility of civilization against the chaos of the subconscious.",
         "isbn": "ISBN-978-1-234-5678-1",
-        "inCart": false
+        "inCart": false,
+        "pages": 248,
+        "coverType": "Hardcover"
     },
     {
         "id": "4",
@@ -41,11 +47,13 @@ export let booksData = [
         "author": "Haruki Murakami",
         "genre": ["magical realism", "literary fiction", "mystery"],
         "price": 13.99,
-        "stock": 10,
+        "stock": 4201,
         "image": "kafkaontheshore_cover.png",
         "description": "A surreal and mesmerizing journey through parallel narratives: a runaway teenager named Kafka Tamura and an elderly man, Nakata, who talks to cats. Murakami weaves a dreamlike tale of fate, music, and the blurred line between reality and the supernatural.",
         "isbn": "ISBN-978-1-4000-7927-8",
-        "inCart": false
+        "inCart": false,
+        "pages": 467,
+        "coverType": "Paperback"
     },
     {
         "id": "5",
@@ -53,11 +61,13 @@ export let booksData = [
         "author": "Arkady & Boris Strugatsky",
         "genre": ["sci-fi", "adventure", "Soviet literature"],
         "price": 10.99,
-        "stock": 7,
+        "stock": 200,
         "image": "crimsonclouds_cover.png",
         "description": "A thrilling adventure set on Venus, where a group of scientists and explorers face mysterious phenomena and deadly challenges in an alien landscape. This classic Soviet sci-fi novel blends hard science with philosophical depth.",
         "isbn": "ISBN-978-5-699-12345-6",
-        "inCart": false
+        "inCart": false,
+        "pages": 192,
+        "coverType": "Paperback"
     },
     {
         "id": "6",
@@ -65,11 +75,13 @@ export let booksData = [
         "author": "Kurt Vonnegut",
         "genre": ["satire", "sci-fi", "anti-war"],
         "price": 9.99,
-        "stock": 14,
+        "stock": 20,
         "image": "slaughterhousefive_cover.png",
-        "description": "Billy Pilgrim becomes 'unstuck in time,' experiencing his life out of order—from his time as a soldier in World War II to his abduction by aliens. Vonnegut’s darkly humorous masterpiece explores the absurdity of war and the fragility of human existence.",
+        "description": "Billy Pilgrim becomes 'unstuck in time,' experiencing his life out of order—from his time as a soldier in World War II to his abduction by aliens. Vonnegut's darkly humorous masterpiece explores the absurdity of war and the fragility of human existence.",
         "isbn": "ISBN-978-0-440-18029-6",
-        "inCart": false
+        "inCart": false,
+        "pages": 215,
+        "coverType": "Paperback"
     },
     {
         "id": "7",
@@ -77,11 +89,13 @@ export let booksData = [
         "author": "Joseph Conrad",
         "genre": ["literary fiction", "adventure", "colonialism critique"],
         "price": 8.50,
-        "stock": 11,
+        "stock": 50,
         "image": "heartofdarkness_cover.png",
-        "description": "Charles Marlow’s journey into the African Congo to find the enigmatic Kurtz reveals the dark heart of colonialism and the human psyche. Conrad’s haunting prose explores the fine line between civilization and savagery.",
+        "description": "Charles Marlow's journey into the African Congo to find the enigmatic Kurtz reveals the dark heart of colonialism and the human psyche. Conrad's haunting prose explores the fine line between civilization and savagery.",
         "isbn": "ISBN-978-0-14-144168-2",
-        "inCart": false
+        "inCart": false,
+        "pages": 96,
+        "coverType": "Paperback"
     },
     {
         "id": "8",
@@ -89,11 +103,13 @@ export let booksData = [
         "author": "Stanisław Lem",
         "genre": ["sci-fi", "philosophical", "psychological"],
         "price": 12.75,
-        "stock": 9,
+        "stock": 12,
         "image": "solaris_cover.png",
-        "description": "Psychologist Kris Kelvin travels to the space station orbiting the planet Solaris, where the crew is haunted by manifestations of their deepest memories and guilt. Lem’s exploration of human consciousness and the limits of understanding is a sci-fi classic.",
+        "description": "Psychologist Kris Kelvin travels to the space station orbiting the planet Solaris, where the crew is haunted by manifestations of their deepest memories and guilt. Lem's exploration of human consciousness and the limits of understanding is a sci-fi classic.",
         "isbn": "ISBN-978-0-575-07733-5",
-        "inCart": false
+        "inCart": false,
+        "pages": 204,
+        "coverType": "Hardcover"
     },
     {
         "id": "9",
@@ -101,10 +117,12 @@ export let booksData = [
         "author": "Stanisław Lem",
         "genre": ["sci-fi", "military sci-fi", "philosophical"],
         "price": 11.25,
-        "stock": 6,
+        "stock": 1240,
         "image": "theinvincible_cover.png",
-        "description": "A spaceship lands on a distant planet to investigate the disappearance of its sister ship, only to encounter an invisible, indestructible swarm of microscopic robots. Lem’s novel explores themes of technology, evolution, and the limits of human perception.",
+        "description": "A spaceship lands on a distant planet to investigate the disappearance of its sister ship, only to encounter an invisible, indestructible swarm of microscopic robots. Lem's novel explores themes of technology, evolution, and the limits of human perception.",
         "isbn": "ISBN-978-1-59017-216-7",
-        "inCart": false
+        "inCart": false,
+        "pages": 159,
+        "coverType": "Paperback"
     }
 ]

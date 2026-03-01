@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel=stylesheet href="css/fonts.css">
+    <link rel=stylesheet href="css/global.css">
 </head>
 <body>
+    <h1 class="product__title"></h1>
+    <h2 class="product__author"></h2>
+    <img class="product__cover"> <!-- for the cover just the alt book_cover.png hast to change -->
+    <div class="product__info">
+        <p class="info__description"></p>
+        <!-- Meta data -->
+        <div class="info__meta">
+            <!-- Price isbn and additional information -->
+            <span class="meta__price"></span>
+            <span class="meta__isbn"></span>
+            <span class="meta__cover-pages"></span> <!-- It should be: Hardover / 224 Pages -->
+        </div>
+        <!-- Add to cart -->
+        <span class="info__stock"></span> <!-- This changes from "In stock", "Limited stock", "Out of stock" -->
+        <div class="info__availability"></div> <!-- This is a circle that changes color based on the stock -->
+        <div>
+            <span>Quantity:</span>
+            <label class="info__quantity">
+                <input type="number" name="quantity" id="quantity" value="1" min="1" max="9">
+            </label>
+            <hr>
+            <button class="info__add">Add to cart</button>
+        </div>
+    </div>
 
-
-  <script type="module" src="dist/main.js"></script>
+  <script type="module" src="dist/product.js"></script>
 </body>
 </html>

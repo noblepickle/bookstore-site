@@ -5,7 +5,7 @@ import { updateCartCounter } from './utils/cart.js';
 //import { cartItemIds} from "./utils/cart.js";
 export let genres = [];
 function init() {
-    const bookInstances = booksData.map((book) => new BookInstance(book.id ?? "unknown", book.title ?? "Untitled", book.author ?? "Unknown Author", book.genre ?? [], book.price ?? 0, book.stock ?? 0, book.image ?? "default-cover.png", book.description ?? "", book.isbn ?? "", book.inCart ?? false));
+    const bookInstances = booksData.map((book) => new BookInstance(book.id ?? "unknown", book.title ?? "Untitled", book.author ?? "Unknown Author", book.genre ?? [], book.price ?? 0, book.stock ?? 0, book.image ?? "default-cover.png", book.description ?? "", book.isbn ?? "", book.inCart ?? false, book.pages ?? 0, book.coverType ?? "Unknown"));
     booksData.forEach((book) => {
         (book.genre || []).forEach((genre) => {
             if (!genres.includes(genre)) {
@@ -34,7 +34,6 @@ function init() {
             const leftArrow = container.querySelector('.left-arrow');
             const rightArrow = container.querySelector('.right-arrow');
             if (!carouselWrapper || !leftArrow || !rightArrow) {
-                console.error('Carousel wrapper or arrows not found in container:', container);
                 return;
             }
             const cardWidth = 250;

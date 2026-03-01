@@ -63,6 +63,8 @@
         border: none;
         border-radius: 19px;
         cursor: pointer;
+        position: relative;
+        left: 9px;
     }
     .hero-cta:hover {
         transform: translateY(-2px);
@@ -75,9 +77,9 @@
     .hero__image-mobile {display: none;}
     .hero__image {
         display: block;
-        grid-column: 7 / span 5;
+        grid-column: 8 / span 5;
         grid-row: 1 / span 2;
-        width: 90%;
-        height: 700px;
+        width: 80%;
+        border-radius: 19px;
     }
 }

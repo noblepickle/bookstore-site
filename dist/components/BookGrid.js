@@ -30,29 +30,30 @@ export function renderBookCard(books, section) {
                 <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" draggable="false" alt=""></button>
             </div>`;
         article.addEventListener('click', (e) => {
-            const cartButton = article.querySelector('.book-card__cart-button');
-            if (cartButton) {
-                cartButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleCartStatus(book);
-                    const img = cartButton.querySelector('img');
-                    if (img) {
-                        img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
-                    }
-                });
-            }
             const moreButton = e.target.closest('.book-card__more-button');
             if (moreButton) {
                 console.log('clicked more button: ', book.id);
+                window.location.href = `product.html?id=${book.id}`;
                 return;
             }
             const infoSection = e.target.closest('.book-card__info');
             if (infoSection) {
                 console.log('clicked info: ', book.id);
+                window.location.href = `product.html?id=${book.id}`;
                 return;
             }
-            console.error('Error: handler not found, id: ', book.id);
         });
+        const cartButton = article.querySelector('.book-card__cart-button');
+        if (cartButton) {
+            cartButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleCartStatus(book);
+                const img = cartButton.querySelector('img');
+                if (img) {
+                    img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
+                }
+            });
+        }
         container.appendChild(article);
     });
 }
