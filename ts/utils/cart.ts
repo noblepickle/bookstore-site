@@ -1,35 +1,22 @@
-import { BookInstance } from '../types/Book.js';
+import { Book } from '../types/Book.js';
 
 // Define a type for cart items
 interface CartItem {
     id: string;
+    title: string;
+    price: number;
     quantity: number;
 }
 
-// Global cart state
-const cartState: { items: CartItem[] } = {
-    items: [],
-};
-
-// Function to update the cart state
-function updateCartState(book: BookInstance, add: boolean) {
-    const existingItemIndex = cartState.items.findIndex(item => item.id === book.id);
-
-    if (add) {
-        if (existingItemIndex >= 0) {
-            cartState.items[existingItemIndex].quantity += 1;
-        } else {
-            cartState.items.push({ id: book.id, quantity: 1 });
-        }
-    } else {
-        if (existingItemIndex >= 0) {
-            cartState.items[existingItemIndex].quantity -= 1;
-            if (cartState.items[existingItemIndex].quantity <= 0) {
-                cartState.items.splice(existingItemIndex, 1);
-            }
-        }
-    }
+// Function to load local stored cart items
+function loadCart(): { items: CartItem[] } {
+    const data = localStorage.getItem('cart');
+    if (data) { return JSON.parse(data); }
+    return { items: [] };
 }
+
+// Global cart state
+const cartState: { items: CartItem[] } = loadCart();
 
 // Function to update the cart counter in the UI
 export function updateCartCounter() {
@@ -41,13 +28,18 @@ export function updateCartCounter() {
 }
 
 // Function to toggle cart status and update cart state
-export function toggleCartStatus(book: BookInstance) {
-    book.toggleCart();
-    updateCartState(book, book.inCartStatus);
+export function toggleCartStatus(book: Book) {
+    const existingItemIndex = cartState.items.findIndex(item => item.id === book.id);
+
+    if (existingItemIndex >= 0) {
+        cartState.items.splice(existingItemIndex, 1);
+    } else {
+        cartState.items.push({ id: book.id, title: book.title, price: book.price, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cartState));
     updateCartCounter();
 }
 
-// Function to get the cart state
-export function getCartState() {
-    return cartState;
+export function isInCart(bookId: string): boolean {
+    return cartState.items.some(item => item.id === bookId);
 }

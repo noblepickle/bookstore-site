@@ -1,5 +1,5 @@
 import { BookInstance } from '../types/Book.js';
-import { toggleCartStatus } from '../utils/cart.js';
+import { toggleCartStatus, isInCart} from '../utils/cart.js';
 
 
 export function renderBookCard(books: BookInstance[], section: string) {
@@ -33,7 +33,7 @@ export function renderBookCard(books: BookInstance[], section: string) {
             </div>
             <div class="book-card__actions">
                 <button class="book-card__more-button">Read more</button>
-                <button class="book-card__cart-button"><img src="images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg" draggable="false" alt=""></button>
+                <button class="book-card__cart-button"><img src="images/icons/${isInCart(book.id) ? 'removeCart' : 'addCart'}.svg" draggable="false" alt=""></button>
             </div>`;
 
         article.addEventListener('click', (e: MouseEvent): void => {
@@ -59,7 +59,7 @@ export function renderBookCard(books: BookInstance[], section: string) {
                 toggleCartStatus(book);
                 const img = cartButton.querySelector('img');
                 if (img) {
-                    img.setAttribute('src', `images/icons/${book.inCartStatus ? 'removeCart' : 'addCart'}.svg`);
+                    img.setAttribute('src', `images/icons/${isInCart(book.id) ? 'removeCart' : 'addCart'}.svg`);
                 }
             });
         }
