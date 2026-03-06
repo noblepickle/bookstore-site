@@ -1,5 +1,6 @@
 import { booksData } from "./data/books.js";
 import { Book } from "./types/Book.js";
+import { addToCart } from "./utils/cart.js";
 
 function getBookIdFromUrl(): string | null {
     const params = new URLSearchParams(window.location.search);
@@ -56,6 +57,15 @@ function populateBook(book: Book): void {
     //stock
     const stock = document.querySelector( ".info__stock");
     if (stock) stock.innerHTML = getStock(book);
+    // Add to cart button
+    const addButton = document.querySelector<HTMLButtonElement>('.info__add');
+    if (addButton) {
+        addButton.addEventListener('click', () => {
+            const quantityInput = document.querySelector<HTMLInputElement>('#quantity');
+            const quantity = Number(quantityInput?.value);
+            addToCart(book, quantity);
+        });
+    }
 }
 
 function init(): void {

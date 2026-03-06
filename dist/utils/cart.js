@@ -28,6 +28,17 @@ export function toggleCartStatus(book) {
     localStorage.setItem('cart', JSON.stringify(cartState));
     updateCartCounter();
 }
+export function addToCart(book, quantity) {
+    const existingItemIndex = cartState.items.findIndex(item => item.id === book.id);
+    if (existingItemIndex >= 0) {
+        cartState.items[existingItemIndex].quantity += quantity;
+    }
+    else {
+        cartState.items.push({ id: book.id, title: book.title, price: book.price, quantity: quantity });
+    }
+    localStorage.setItem('cart', JSON.stringify(cartState));
+    updateCartCounter();
+}
 export function isInCart(bookId) {
     return cartState.items.some(item => item.id === bookId);
 }

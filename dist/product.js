@@ -1,4 +1,5 @@
 import { booksData } from "./data/books.js";
+import { addToCart } from "./utils/cart.js";
 function getBookIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
@@ -59,6 +60,15 @@ function populateBook(book) {
     const stock = document.querySelector(".info__stock");
     if (stock)
         stock.innerHTML = getStock(book);
+    // Add to cart button
+    const addButton = document.querySelector('.info__add');
+    if (addButton) {
+        addButton.addEventListener('click', () => {
+            const quantityInput = document.querySelector('#quantity');
+            const quantity = Number(quantityInput?.value);
+            addToCart(book, quantity);
+        });
+    }
 }
 function init() {
     const bookId = getBookIdFromUrl();
