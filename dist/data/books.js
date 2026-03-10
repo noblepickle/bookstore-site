@@ -129,12 +129,13 @@ export let booksData = [
         "id": "10",
         "title": "Die Känguru-Offenbarung",
         "author": "Marc-Uwe Kling",
-        "genre": ["literary fiction", "adventure", "comedy"],
+        "genre": ["fiction", "adventure", "comedy"],
         "price": 12.75,
         "stock": 14,
         "image": "kaenguruoffenbarung_cover.png",
         "description": "asidhposbipbsdibs",
         "isbn": "ISBN-978-0-440-18029-6",
+        "inCart": false,
         "pages": 124,
         "coverType": "Paperback"
     }

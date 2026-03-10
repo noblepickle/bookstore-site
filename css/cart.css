@@ -1,0 +1,11 @@
+.cart {
+    min-height: 76vh;
+    flex-direction: column;
+    margin-top: 10rem;
+}
+
+.cart-container {
+    background-color: var(--color-section);
+    min-height:
+}
+

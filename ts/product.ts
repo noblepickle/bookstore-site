@@ -1,6 +1,6 @@
 import { booksData } from "./data/books.js";
 import { Book } from "./types/Book.js";
-import { addToCart } from "./utils/cart.js";
+import { addToCart, updateCartCounter } from "./utils/cart.js";
 
 function getBookIdFromUrl(): string | null {
     const params = new URLSearchParams(window.location.search);
@@ -81,8 +81,8 @@ function init(): void {
         return;
     }
 
+    updateCartCounter();
     populateBook(book);
-
 }
 
 document.addEventListener("DOMContentLoaded", init);
